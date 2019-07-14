@@ -9,4 +9,8 @@ body {
     opacity: 0.5;
     height : 500px ;
     width: 500px ;
+    color: white ;
+}
+h1,h2 {
+    color:  white ;
 }
