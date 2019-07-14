@@ -1,0 +1,12 @@
+body {
+    margin: 0 ;
+    padding: 0 ;
+    background-image: url(https://i.pinimg.com/originals/5b/56/0f/5b560f1e1a0cf094a23f87d27e59c6d3.jpg);
+    background-size: cover ;
+}
+#questioBox {
+    background-color: white;
+    opacity: 0.5;
+    height : 500px ;
+    width: 500px ;
+}
