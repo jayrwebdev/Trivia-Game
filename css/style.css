@@ -1,31 +1,33 @@
 body {
     margin: 0 ;
     padding: 0 ;
-    background-image:url(https://i.pinimg.com/originals/5b/56/0f/5b560f1e1a0cf094a23f87d27e59c6d3.jpg);
+    background-image:disabled:url(https://i.pinimg.com/originals/5b/56/0f/5b560f1e1a0cf094a23f87d27e59c6d3.jpg);
     background-size: cover ;
 }
 .questionBox {
-    margin-top: 100px ;
+    margin-top: 10px ;
     height : 500px ;
     width: 100% ;
     text-align: center ;
 }
 h1,h2 {
-    color: white ;
+    color:black ;
 }
 #gameDisplay {
     margin: 0 auto ;
     text-align: center;
 }
-button {
+#startButton {
     text-align: center;
-    margin-left: 650px ;
     height: 50px ;
-    width: 150px;
+    width: 100%;
     border-radius: 10px;
 }
-span {
-    color: white ;
+span, .questions{
+    color:black ;
     font-size: 40px ;
-    padding-bottom: 100px ;
+}
+#timer {
+    padding-top: 20px; ;
+    text-align:center ;
 }

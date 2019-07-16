@@ -1,3 +1,7 @@
+// Global variables
+   var correct = 0
+   var wrong = 0
+   var notAnswered = 0
 // Objects Array
 var triviaQ = [{
     question: 'Who is the captain of the Straw Hat Pirates?',
@@ -41,26 +45,43 @@ var labels = ['First','Second','Third','Fourth','Fifth']
    $("#startButton").on('click', function () {
          
               $(".start").empty();
+              timerClock(5)
               showQuestions();
+             
    })
 // show questions
    function showQuestions() {
        
        for ( var t = 0 ; t < 5 ; t++) {
            var objPos = triviaQ[t] ;
-           $(".questionBox").append("<span>" + objPos.question + "</span><br>")
-           $(".questionbox").append()
-          
+           $(".questionBox").append('<span class="questions">' + objPos.question + '</span><br>')
+           
+           for( var q = 0; q < objPos.options.length; q++ ) {
+               $(".questionBox").append('<div class=""><button id="answers">' + objPos.options[q] +'</button></div><br>')
+           }
+           
        }   
-        // loops through answers for each  button
-       for (var w = 0; w <= 5; w++) {
-          
-       }
+       
        
    }
 
-   function timer(seconds) {
+   function timerClock(sec) {
+      
+      var tickTock = setInterval(function(){
+          sec = sec -1
+          $("#timer").html('<h2>' + sec +'</h2><br>')
+           
+          if (sec <= 0) {
+              $('.questionBox').fadeOut(400);
+              correct = 0;
+              wrong = 0;
+              notAnswered = 0 ;
 
+              clearInterval(tickTock)
+              return
+              
+          }
+      }, 1000)
    }
 
 
