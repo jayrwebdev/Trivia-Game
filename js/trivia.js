@@ -60,8 +60,8 @@ function showQuestions() {
         $(".questionBox").append('<span class="questions">' + objPos.question + '</span><br>')
 
         for (var q = 0; q < objPos.options.length; q++) {
-            $(".questionBox").append('<div class=""><button class="'options + t + '"> "' + + objPos.options[q] + '"</button></div><br>"')
-            for ()
+            $(".questionBox").append('<div class=""><button>'  + objPos.options[q] + '</button></div><br>')
+            
         }
     }
 }
@@ -78,7 +78,7 @@ function timerClock(sec) {
         }
     }, 1000);
 }
-// function for check guesses and answersd
+
 
 
 
@@ -86,26 +86,26 @@ $('body').on("click", ".answers", function (event) {
     var results = $(this).text()
     console.log(results)
 
-   // for (var i = 0; i < triviaQ.length ; i++) {
-        //console.log(triviaQ[i].answers)
-       // if (results === triviaQ[1].answers) {
+    for (var i = 0; i < triviaQ.length ; i++) {
+        console.log(triviaQ[i].answers)
+       if (results === triviaQ[1].answers) {
             correct++
             console.log(correct)
-       // }
-       // else {
-        //    wrong++
-        //    console.log(wrong)
-       // }
-       // if (results === triviaQ[2].answers) {
-          //  correct++
-          //  console.log(correct)
-       // }
-       // else {
-       //     wrong++
-           // console.log(wrong)
-       // }
+        }
+       else {
+            wrong++
+            console.log(wrong)
+        }
+        if (results === triviaQ[2].answers) {
+            correct++
+            console.log(correct)
+        }
+        else {
+            wrong++
+            console.log(wrong)
+        }
 
-   // }
+    }
 
 
 
