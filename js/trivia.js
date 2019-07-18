@@ -86,26 +86,26 @@ $('body').on("click", ".answers", function (event) {
     var results = $(this).text()
     console.log(results)
 
-    for (var i = 0; i < triviaQ.length ; i++) {
-        console.log(triviaQ[i].answers)
-        if (results === triviaQ[1].answers) {
+   // for (var i = 0; i < triviaQ.length ; i++) {
+        //console.log(triviaQ[i].answers)
+       // if (results === triviaQ[1].answers) {
             correct++
             console.log(correct)
-        }
-        else {
-            wrong++
-            console.log(wrong)
-        }
-        if (results === triviaQ[2].answers) {
-            correct++
-            console.log(correct)
-        }
-        else {
-            wrong++
-            console.log(wrong)
-        }
+       // }
+       // else {
+        //    wrong++
+        //    console.log(wrong)
+       // }
+       // if (results === triviaQ[2].answers) {
+          //  correct++
+          //  console.log(correct)
+       // }
+       // else {
+       //     wrong++
+           // console.log(wrong)
+       // }
 
-    }
+   // }
 
 
 
