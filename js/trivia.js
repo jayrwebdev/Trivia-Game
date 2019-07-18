@@ -1,7 +1,7 @@
 // Global variables
-   var correct = 0
-   var wrong = 0
-   var notAnswered = 0
+var correct = 0
+var wrong = 0
+var notAnswered = 0
 // Objects Array
 var triviaQ = [{
     question: 'Who is the captain of the Straw Hat Pirates?',
@@ -40,48 +40,77 @@ var triviaQ = [{
     divClass: "pirateShip",
 }
 ]
-var labels = ['First','Second','Third','Fourth','Fifth']
+var labels = ['First', 'Second', 'Third', 'Fourth', 'Fifth']
 // hide buttons
-   $("#startButton").on('click', function () {
-         
-              $(".start").empty();
-              timerClock(5)
-              showQuestions();
-             
-   })
+$("#startButton").on('click', function () {
+
+    $(".start").empty();
+    timerClock(60)
+    showQuestions();
+
+})
 // show questions
-   function showQuestions() {
-       
-       for ( var t = 0 ; t < 5 ; t++) {
-           var objPos = triviaQ[t] ;
-           $(".questionBox").append('<span class="questions">' + objPos.question + '</span><br>')
-           
-           for( var q = 0; q < objPos.options.length; q++ ) {
-               $(".questionBox").append('<div class=""><button id="answers">' + objPos.options[q] +'</button></div><br>')
-           }
-           
-       }   
-       
-       
-   }
+// loop for to display questions
+// loop to give button data attribute
+// loop to display options
+function showQuestions() {
 
-   function timerClock(sec) {
-      
-      var tickTock = setInterval(function(){
-          sec = sec -1
-          $("#timer").html('<h2>' + sec +'</h2><br>')
-           
-          if (sec <= 0) {
-              $('.questionBox').fadeOut(400);
-              correct = 0;
-              wrong = 0;
-              notAnswered = 0 ;
+    for (var t = 0; t < 5; t++) {
+        var objPos = triviaQ[t];
+        $(".questionBox").append('<span class="questions">' + objPos.question + '</span><br>')
 
-              clearInterval(tickTock)
-              return
-              
-          }
-      }, 1000)
-   }
+        for (var q = 0; q < objPos.options.length; q++) {
+            $(".questionBox").append('<div class=""><button class="'options + t + '"> "' + + objPos.options[q] + '"</button></div><br>"')
+            for ()
+        }
+    }
+}
+//countdown timer
+function timerClock(sec) {
+    var tickTock = setInterval(function () {
+        sec = sec - 1
+        $("#timer").html('<h2>' + sec + '</h2><br>')
+
+        if (sec <= 0) {
+            $('.questionBox').fadeOut(500);
+            $('#timer').hide();
+            clearInterval(tickTock)
+        }
+    }, 1000);
+}
+// function for check guesses and answersd
+
+
+
+$('body').on("click", ".answers", function (event) {
+    var results = $(this).text()
+    console.log(results)
+
+    for (var i = 0; i < triviaQ.length ; i++) {
+        console.log(triviaQ[i].answers)
+        if (results === triviaQ[1].answers) {
+            correct++
+            console.log(correct)
+        }
+        else {
+            wrong++
+            console.log(wrong)
+        }
+        if (results === triviaQ[2].answers) {
+            correct++
+            console.log(correct)
+        }
+        else {
+            wrong++
+            console.log(wrong)
+        }
+
+    }
+
+
+
+})
+
+
 
 
